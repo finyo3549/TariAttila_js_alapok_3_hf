@@ -16,7 +16,7 @@
                     console.log("Az új véletlen szám: ", veletlenSzam);
                 })
                 gomb.addEventListener("click", function () {
-                    let tipp = document.getElementById("tipp");
+                    const tipp = document.getElementById("tipp");
                     tippErtek = tipp.value;
                     console.log("a tipp:" + tippErtek)
                     eredmeny(veletlenSzam, tippErtek);
