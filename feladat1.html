@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>1. Feladat</title>
+        <style></style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                let veletlenSzam = Math.trunc(Math.random(1, 100) * 100);
+                console.log("A véletlenszám: ", veletlenSzam);
+                const gomb = document.getElementById("gomb");
+                const ujra = document.getElementById("ujra");
+                ujra.addEventListener("click", function () {
+                    veletlenSzam = Math.trunc(Math.random(1, 100) * 100);
+                    console.log("Az új véletlen szám: ", veletlenSzam);
+                })
+                gomb.addEventListener("click", function () {
+                    let tipp = document.getElementById("tipp");
+                    tippErtek = tipp.value;
+                    console.log("a tipp:" + tippErtek)
+                    eredmeny(veletlenSzam, tippErtek);
+
+                });
+
+            });
+
+
+            function eredmeny(szam, tipp) {
+                const mezo = document.getElementById("mezo");
+
+                if (tipp < szam) {
+                    mezo.innerHTML = "A szám nagyobb, mint a tipped";
+                }
+
+                if (tipp > szam) {
+                    mezo.innerHTML = "A szám kisebb, mint a tipped";
+                }
+
+                if (tipp == szam) {
+                    mezo.innerHTML = "Eltaláltad";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <main>
+            <label for="tipp">Add meg a tipped</label>
+            <input type="number" id="tipp">
+            <br><br>
+            <button id="gomb">Nézzük!</button>
+            <br><br>
+            <button id="ujra">Új szám generálás</button>
+            <p id="mezo"></p>
+
+        </main>
+    </body>
+</html>
