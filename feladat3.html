@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. feladat</title>
+</head>
+<script>
+    function felugro() {
+    const d = new Date;
+    let ora = d.getHours();
+    console.log(ora);
+    if (ora > 6 && ora <= 10) {
+        window.alert("Jó reggelt");
+    }
+    else if (ora > 10 && ora <= 18) {
+        window.alert("Jó napot");    
+    }
+    else if (ora > 18 && ora <=23) {
+        window.alert("Jó estét");
+    }
+    else if (ora > 23 && ora <=6) {
+        window.alert("Jó éjszakát")
+    }
+}
+</script>
+<body>
+    <main>
+        <button id="koszones" onclick="felugro()">Köszöntés</button>
+    </main>
+</body>
+</html>
